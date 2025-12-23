@@ -46,8 +46,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http/httptrace"
-	"github.com/RealKonik/hello-requests/mimic"
+	"github.com/anthonyle138/hello-requests/http/httptrace"
+	"github.com/anthonyle138/hello-requests/mimic"
 	tls "github.com/refraction-networking/utls"
 
 	"golang.org/x/net/http/httpguts"

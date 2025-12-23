@@ -11,10 +11,10 @@
 //
 // To use pprof, link this package into your program:
 //
-//	import _ "github.com/RealKonik/hello-requests/http/pprof"
+//	import _ "github.com/anthonyle138/hello-requests/http/pprof"
 //
 // If your application is not already running an http server, you
-// need to start one. Add "github.com/RealKonik/hello-requests/http" and "log" to your imports and
+// need to start one. Add "github.com/anthonyle138/hello-requests/http" and "log" to your imports and
 // the following code to your main function:
 //
 //	go func() {
@@ -73,8 +73,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http"
-	"github.com/RealKonik/hello-requests/internal/profile"
+	"github.com/anthonyle138/hello-requests/http"
+	"github.com/anthonyle138/hello-requests/internal/profile"
 )
 
 func init() {

@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http"
-	"github.com/RealKonik/hello-requests/mimic"
-	"github.com/RealKonik/hello-requests/utils"
+	"github.com/anthonyle138/hello-requests/http"
+	"github.com/anthonyle138/hello-requests/mimic"
+	"github.com/anthonyle138/hello-requests/utils"
 	"github.com/tam7t/hpkp"
 )
 

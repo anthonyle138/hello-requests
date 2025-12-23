@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http"
+	"github.com/anthonyle138/hello-requests/http"
 )
 
 // drainBody reads all of b to memory and then returns two equivalent

@@ -1,4 +1,4 @@
-module github.com/RealKonik/hello-requests
+module github.com/anthonyle138/hello-requests
 
 go 1.24
 

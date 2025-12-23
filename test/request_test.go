@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	request "github.com/RealKonik/hello-requests"
+	request "github.com/anthonyle138/hello-requests"
 )
 
 // go test ./test -v

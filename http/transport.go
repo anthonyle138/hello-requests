@@ -28,8 +28,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http/httptrace"
-	"github.com/RealKonik/hello-requests/mimic"
+	"github.com/anthonyle138/hello-requests/http/httptrace"
+	"github.com/anthonyle138/hello-requests/mimic"
 	"github.com/gwatts/rootcerts"
 	tls "github.com/refraction-networking/utls"
 	"github.com/tam7t/hpkp"

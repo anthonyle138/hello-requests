@@ -19,8 +19,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http/httptrace"
-	"github.com/RealKonik/hello-requests/http/internal"
+	"github.com/anthonyle138/hello-requests/http/httptrace"
+	"github.com/anthonyle138/hello-requests/http/internal"
 
 	"golang.org/x/net/http/httpguts"
 )

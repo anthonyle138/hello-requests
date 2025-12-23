@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/RealKonik/hello-requests/compress"
-	"github.com/RealKonik/hello-requests/http"
-	"github.com/RealKonik/hello-requests/http/cookiejar"
-	"github.com/RealKonik/hello-requests/utils"
+	"github.com/anthonyle138/hello-requests/compress"
+	"github.com/anthonyle138/hello-requests/http"
+	"github.com/anthonyle138/hello-requests/http/cookiejar"
+	"github.com/anthonyle138/hello-requests/utils"
 )
 
 // Features:

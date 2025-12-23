@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/RealKonik/hello-requests/http/httptrace"
+	"github.com/anthonyle138/hello-requests/http/httptrace"
 )
 
 // A Header represents the key-value pairs in an HTTP header.
