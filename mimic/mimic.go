@@ -479,8 +479,8 @@ var (
 		},
 	}
 
-	// Safari iOS 18.5 - Uses Chrome 133 H2 fingerprint for Shopee compatibility
-	// H2 fingerprint: 1:65536;2:0;4:6291456;6:262144|15663105||m,a,s,p (same as Chrome 133)
+	// Safari iOS 18.5 - Uses exact Chrome 133 fingerprint for Shopee compatibility
+	// TLS + H2 fingerprint identical to Chrome 133
 	safariIOS185Mimic = Settings{
 		H2HeaderOrder: []string{
 			":method",
@@ -518,20 +518,7 @@ var (
 				CompressionMethods: []byte{0x00},
 				Extensions: []utls.TLSExtension{
 					&utls.UtlsGREASEExtension{},
-					&utls.SNIExtension{},
-					&utls.UtlsExtendedMasterSecretExtension{},
-					&utls.RenegotiationInfoExtension{Renegotiation: utls.RenegotiateOnceAsClient},
-					&utls.SupportedCurvesExtension{
-						Curves: []utls.CurveID{
-							utls.CurveID(utls.GREASE_PLACEHOLDER),
-							utls.X25519,
-							utls.CurveP256,
-							utls.CurveP384,
-						}},
-					&utls.SupportedPointsExtension{SupportedPoints: []byte{0x00}},
 					&utls.SessionTicketExtension{},
-					&utls.ALPNExtension{AlpnProtocols: []string{"h2", "http/1.1"}},
-					&utls.StatusRequestExtension{},
 					&utls.SignatureAlgorithmsExtension{SupportedSignatureAlgorithms: []utls.SignatureScheme{
 						utls.ECDSAWithP256AndSHA256,
 						utls.PSSWithSHA256,
@@ -542,34 +529,45 @@ var (
 						utls.PSSWithSHA512,
 						utls.PKCS1WithSHA512,
 					}},
-					&utls.SCTExtension{},
+					&utls.ApplicationSettingsExtension{SupportedProtocols: []string{"h2"}},
 					&utls.KeyShareExtension{
 						KeyShares: []utls.KeyShare{
 							{Group: utls.CurveID(utls.GREASE_PLACEHOLDER), Data: []byte{0}},
 							{Group: utls.X25519},
 						}},
-					&utls.PSKKeyExchangeModesExtension{
-						Modes: []uint8{
-							utls.PskModeDHE,
-						}},
+					&utls.SCTExtension{},
+					&utls.SupportedPointsExtension{SupportedPoints: []byte{0x00}},
 					&utls.SupportedVersionsExtension{
 						Versions: []uint16{
 							utls.GREASE_PLACEHOLDER,
 							utls.VersionTLS13,
 							utls.VersionTLS12,
-							utls.VersionTLS11,
-							utls.VersionTLS10,
 						}},
+					&utls.StatusRequestExtension{},
+					&utls.ALPNExtension{AlpnProtocols: []string{"h2", "http/1.1"}},
+					&utls.SNIExtension{},
 					&utls.UtlsCompressCertExtension{
 						Algorithms: []utls.CertCompressionAlgo{
 							utls.CertCompressionBrotli,
 						}},
-					&utls.ApplicationSettingsExtension{},
+					&utls.SupportedCurvesExtension{
+						Curves: []utls.CurveID{
+							utls.CurveID(utls.GREASE_PLACEHOLDER),
+							utls.X25519,
+							utls.CurveP256,
+							utls.CurveP384,
+						}},
+					&utls.PSKKeyExchangeModesExtension{
+						Modes: []uint8{
+							utls.PskModeDHE,
+						}},
+					&utls.UtlsExtendedMasterSecretExtension{},
+					&utls.RenegotiationInfoExtension{Renegotiation: utls.RenegotiateOnceAsClient},
 					&utls.UtlsGREASEExtension{},
 					&utls.UtlsPaddingExtension{GetPaddingLen: utls.BoringPaddingStyle},
 				},
 				TLSVersMax: utls.VersionTLS13,
-				TLSVersMin: utls.VersionTLS10,
+				TLSVersMin: utls.VersionTLS12,
 			}
 		},
 	}
