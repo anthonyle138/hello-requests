@@ -479,8 +479,8 @@ var (
 		},
 	}
 
-	// Safari iOS 18.5 - Uses Chrome TLS fingerprint for Shopee compatibility
-	// Only H2 settings differ slightly
+	// Safari iOS 18.5 - Uses Chrome 133 H2 fingerprint for Shopee compatibility
+	// H2 fingerprint: 1:65536;2:0;4:6291456;6:262144|15663105||m,a,s,p (same as Chrome 133)
 	safariIOS185Mimic = Settings{
 		H2HeaderOrder: []string{
 			":method",
@@ -490,7 +490,7 @@ var (
 		},
 		H2Settings: []H2Setting{
 			{ID: H2SettingHeaderTableSize, Val: 65536},
-			{ID: H2SettingMaxConcurrentStreams, Val: 1000},
+			{ID: H2SettingEnablePush, Val: 0},
 			{ID: H2SettingInitialWindowSize, Val: 6291456},
 			{ID: H2SettingMaxHeaderListSize, Val: 262144},
 		},
